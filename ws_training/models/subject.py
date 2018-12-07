@@ -6,8 +6,10 @@ class TrainingSubject(models.Model):
     _name = 'pscloud.training.subject'
     _description = "科目"
 
+    def _get_domain_curr_company(self):
+        return [('company_id','=',self.env.user.compny_id.id)]
     name = fields.Char(string='名称')
-    person_id = fields.Many2one('res.partner', string='负责人')
+    person_id = fields.Many2one('res.partner', string='负责人', domain=_get_domain_curr_company)
     lesson_ids = fields.One2many('pscloud.training.lesson', 'subject_id', string='课程')
     desc = fields.Text(string='描述')
 
