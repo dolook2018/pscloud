@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report id="reports_training_sale"
+            model="pscloud.training.lesson"
+            string="课程学员表"
+            name="ws_training.training_sale_view"
+            file="ws_training.training_sale_template"
+            report_type="qweb-html"
+        />
+    </data>
+</odoo>

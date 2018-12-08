@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_pscloud_training_lesson,pscloud.training.lesson,ws_training.model_pscloud_training_lesson,,1,1,1,1
 access_pscloud_training_subject,pscloud.training.subject,ws_training.model_pscloud_training_subject,,1,1,1,1
+access_pscloud_training_classroom,pscloud.training.classroom,ws_training.model_pscloud_training_classroom,,1,1,1,1

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="demo_training_classroom_1" model="pscloud.training.classroom">
+            <field eval="'315'" name="name"/>
+            <field eval="30" name="seats"/>
+            <field eval="50" name="areasize"/>
+            <field eval="'vaild'" name="state"/>
 
+        </record>
         <record id="demo_training_person" model="res.partner">
             <field eval="'徐校长'" name="name"/>
         </record>
@@ -30,6 +36,7 @@
         <record id="demo_training_lesson_1" model="pscloud.training.lesson">
             <field eval="'英语口语'" name="name"/>
             <field name="teacher_id" ref="ws_training.demo_training_teacher"/>
+            <field name="room_id" ref="ws_training.demo_training_classroom_1"/>
             <field eval="[(4, ref('ws_training.demo_training_student_1'))]" name="student_ids"/>
             <field eval="time.strftime('%Y')+'-09-01'" name="start_date"/>
             <field eval="time.strftime('%Y')+'-12-31'" name="end_date"/>

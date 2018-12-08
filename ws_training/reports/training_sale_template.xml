@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="training_sale_view">
+            <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-foreach="docs" t-as="lesson">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <t t-esc="'课程名称：'"/>
+                             <span t-field="lesson.name"/>
+                        </div>
+
+                        <div class="col-md-12">
+                            <t t-esc="'教师：'"/><span t-field="lesson.teacher_id.name"/>
+
+                        </div>
+
+                         <div class="col-md-12">
+                               <t t-esc="'学生名单'"/>
+                        </div>
+
+                        <t t-foreach="lesson.student_ids" t-as="st">
+
+                                <div class="col-md-4">
+                                    <span t-field="st.name"/>
+                                </div>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </t>
+        </template>
+    </data>
+</odoo>

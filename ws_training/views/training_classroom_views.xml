@@ -1,0 +1,55 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+
+        <record id="view_training_classroom_tree" model="ir.ui.view">
+            <field name="name">pscloud.training.classroom.tree</field>
+            <field name="model">pscloud.training.classroom</field>
+            <field name="arch" type="xml">
+                <tree string="教室列表">
+                    <field name="name"/>
+                    <field name="seats"/>
+                    <field name="areasize"/>
+                    <field name="write_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_training_classroom_form" model="ir.ui.view">
+            <field name="name">pscloud.training.classroom.form</field>
+            <field name="model">pscloud.training.classroom</field>
+            <field name="arch" type="xml">
+                <form string="教室">
+                    <header>
+                        <button name="action_confirm" type="object" string="确认启用"  states="draft" class="btn-primary" />
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" attrs="{'readonly': [('state', '=', 'confirm')]}" />
+                                <field name="seats" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                <field name="areasize" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="action_training_classroom" model="ir.actions.act_window">
+            <field name="name">教室</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pscloud.training.classroom</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_training_classroom_tree"/>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -57,6 +57,7 @@
             <field name="arch" type="xml">
                 <form string="课程">
                     <header>
+
                         <button name="action_confirm" type="object" string="确认"  states="draft" class="btn-primary" />
                         <field name="state" widget="statusbar"/>
                     </header>
@@ -71,6 +72,7 @@
                                 <field name="subject_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                                 <field name="teacher_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                                 <field name="person_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                <field name="room_id"/>
                                 <field name="seat_qty"/>
                             </group>
                             <group>
@@ -80,7 +82,7 @@
                         </group>
                         <notebook>
                             <page string="学生">
-                            
+                                <button name="%(action_training_student_regiester_view)d" type="action" string="学生注册"  states="confirm" />
                                 <field name="student_ids"/>
                             </page>
                         </notebook>

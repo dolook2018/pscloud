@@ -8,7 +8,6 @@ from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
 class TrainingLesson(models.Model):
     _name = 'pscloud.training.lesson'
     _description = "课程信息"
-
     @api.multi
     @api.depends('start_date', 'end_date')
     def _compute_days(self):
@@ -20,6 +19,7 @@ class TrainingLesson(models.Model):
 
     name = fields.Char(string='Name')
     teacher_id = fields.Many2one('res.partner', string='老师', domain=[('is_teacher', '=', True)])
+    room_id = fields.Many2one('pscloud.training.classroom', string='教室', domain=[('state', '=', 'vaild')])
     student_ids = fields.Many2many('res.partner', string='学生', domain=[('is_student', '=', True)], readonly=True)
     start_date = fields.Date(string='开始时间',required=1)
     end_date = fields.Date(string='结束时间',required=1)
