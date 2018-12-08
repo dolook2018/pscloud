@@ -30,11 +30,11 @@
         <record id="demo_training_lesson_1" model="pscloud.training.lesson">
             <field eval="'英语口语'" name="name"/>
             <field name="teacher_id" ref="ws_training.demo_training_teacher"/>
-            <field eval="[(4, ref('pscloud_training.demo_training_student_1'))]" name="student_ids"/>
+            <field eval="[(4, ref('ws_training.demo_training_student_1'))]" name="student_ids"/>
             <field eval="time.strftime('%Y')+'-09-01'" name="start_date"/>
             <field eval="time.strftime('%Y')+'-12-31'" name="end_date"/>
             <field eval="30" name="seat_qty"/>
-            <field name="subject_id" ref="pscloud_training.demo_training_subject"/>
+            <field name="subject_id" ref="ws_training.demo_training_subject"/>
         </record>
 
     </data>
